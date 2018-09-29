@@ -1,25 +1,27 @@
 
 import math
 
-def cost(speed,size,maxLoad,numOfDays):
+def cost(speed,size,maxLoad):
 
     OneRate = [0.06,0.12,0.18,0.24]
     ThreeRate = [0.08,0.16,0.24,0.32]
     FiveRate = [0.1,0.2,0.3,0.4]
     
     if speed == 1:
-        rateVolume = (4/3)*3.14*76**3
-        print('rate (volume/day) =',rateVolume)
+        totalVolumeLoss = (4/3)*3.14*76**3
+        print('rate (volume/day) =',totalVolumeLoss)
     
     elif speed == 3:
-        rateVolume = (4/3)*3.14*60**3
-        print('rate (volume/day) =',rateVolume)
+        totalVolumeLoss = (4/3)*3.14*60**3
+        print('rate (volume/day) =',totalVolumeLoss)
         
     elif speed == 5:
-        rateVolume = (4/3)*3.14*25.28**3
-        print('rate (volume/day) =',rateVolume)
+        totalVolumeLoss = (4/3)*3.14*25.28**3
+        print('rate (volume/day) =',totalVolumeLoss)
     
-    print('Cost of desalinating: $',(size-rateVolume*numOfDays)*0.85*0.13)
+    print('Original Volume =',size)
+    print('Final Volume =',size-totalVolumeLoss)
+    print('Cost of desalinating: $',(size-totalVolumeLoss)*0.85*0.13)
     
     OneFuel = [10.9,13.7,16.4]
     ThreeFuel = [14,17.6,21]
@@ -33,52 +35,21 @@ def cost(speed,size,maxLoad,numOfDays):
     else:
         print('Not feasible')
     
+    numOfDays = (9600/speed)/24
+    
     if speed == 1:
         print('Cost of Towing = $',OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays)
-        '''else:
-            print('Cost of Towing = $',OneFuel[math.log10(size)-5]*9600+dailyRental*numOfDays)'''
     
     elif speed == 3:
-        print('Cost of Towing = $',OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays)
-        '''if dailyRental == 520:
-            print('Cost of Towing = $',ThreeFuel[math.log10(size)-5]*5*9600+dailyRental*numOfDays)
-        else:
-            print('Cost of Towing = $',ThreeFuel[math.log10(size)-5]*9600+dailyRental*numOfDays)'''
+        print('Cost of Towing = $',ThreeFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays)
     
     elif speed == 5:
-        print('Cost of Towing = $',OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays)
-        '''if dailyRental == 520:
-            print('Cost of Towing = $',FiveFuel[math.log10(size)-5]*5*9600+dailyRental*numOfDays)
-        else:
-            print('Cost of Towing = $',FiveFuel[math.log10(size)-5]*9600+dailyRental*numOfDays)'''
+        costOfTowing = FiveFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
+        print('Cost of Towing = $')
         
-cost(3,100000,500000,1,4000,0,0,0,0,0,0,0,0)
+    print('Profit =',
 
-'''def costTowing(speed,size,dailyRental,numOfDays):
-
-    One = [10.9,13.7,16.4]
-    Three = [14,17.6,21]
-    Five = [17.2,21.5,25.7]
-    
-    if speed == 1:
-        if dailyRental == 520:
-            print('Cost of Towing = $',One[math.log10(size)-5]*5*9600+dailyRental*numOfDays)
-        else:
-            print('Cost of Towing = $',One[math.log10(size)-5]*9600+dailyRental*numOfDays)
-    
-    if speed == 3:
-        if dailyRental == 520:
-            print('Cost of Towing = $',Three[math.log10(size)-5]*5*9600+dailyRental*numOfDays)
-        else:
-            print('Cost of Towing = $',Three[math.log10(size)-5]*9600+dailyRental*numOfDays)
-    
-    if speed == 5:
-        if dailyRental == 520:
-            print('Cost of Towing = $',Five[math.log10(size)-5]*5*9600+dailyRental*numOfDays)
-        else:
-            print('Cost of Towing = $',Five[math.log10(size)-5]*9600+dailyRental*numOfDays)
-
-costTowing(1,10000000,1400,2)'''
+cost(5,10000000,10000000)
     
         
     
