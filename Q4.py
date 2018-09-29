@@ -1,7 +1,7 @@
 
 import math
 
-def costDesalinating(speed,size,maxLoad,numOfDays,disday1,disday2,disday3,disday4,disday5,disday6,disday7,disday8,disday9):
+def cost(speed,size,maxLoad,numOfDays,disday1,disday2,disday3,disday4,disday5,disday6,disday7,disday8,disday9):
 
     OneRate = [0.06,0.12,0.18,0.24]
     ThreeRate = [0.08,0.16,0.24,0.32]
@@ -109,7 +109,7 @@ def costDesalinating(speed,size,maxLoad,numOfDays,disday1,disday2,disday3,disday
         else:
             print('Cost of Towing = $',FiveFuel[math.log10(size)-5]*9600+dailyRental*numOfDays)'''
         
-costDesalinating(1,100000,500000,4,3000,3000,2000,2000,0,0,0,0,0)
+cost(1,1000000,1000000,1,4000,0,0,0,0,0,0,0,0)
 
 '''def costTowing(speed,size,dailyRental,numOfDays):
 
