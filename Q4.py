@@ -39,18 +39,18 @@ def cost(speed,size,maxLoad):
     
     if speed == 1:
         costOfTowing = OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
-        print('Cost of Towing = $')
-        print('Profit =',costOfTowing - (size-totalVolumeLoss)*0.85*0.13)
+        print('Cost of Towing = $',costOfTowing)
+        print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
     
     elif speed == 3:
         costOfTowing = ThreeFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
-        print('Cost of Towing = $')
-        print('Profit =',costOfTowing - (size-totalVolumeLoss)*0.85*0.13)
+        print('Cost of Towing = $',costOfTowing)
+        print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
     
     elif speed == 5:
         costOfTowing = FiveFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
-        print('Cost of Towing = $')
-        print('Profit =',costOfTowing - (size-totalVolumeLoss)*0.85*0.13)
+        print('Cost of Towing = $',costOfTowing)
+        print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
 cost(5,10000000,10000000)
     
