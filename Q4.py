@@ -1,79 +1,22 @@
 
 import math
 
-def cost(speed,size,maxLoad,numOfDays,disday1,disday2,disday3,disday4,disday5,disday6,disday7,disday8,disday9):
+def cost(speed,size,maxLoad,numOfDays):
 
     OneRate = [0.06,0.12,0.18,0.24]
     ThreeRate = [0.08,0.16,0.24,0.32]
     FiveRate = [0.1,0.2,0.3,0.4]
     
     if speed == 1:
-        rate = 0
-        if disday1 > 0:
-            rate += OneRate[(disday1/1000)-1]
-        if disday2 > 0:
-            rate += OneRate[(disday2/1000)-1]
-        if disday3 > 0:
-            rate += OneRate[(disday3/1000)-1]
-        if disday4 > 0:
-            rate += OneRate[(disday4/1000)-1]
-        if disday5 > 0:
-            rate += OneRate[(disday5/1000)-1]
-        if disday6 > 0:
-            rate += OneRate[(disday6/1000)-1]
-        if disday7 > 0:
-            rate += OneRate[(disday7/1000)-1]
-        if disday8 > 0:
-            rate += OneRate[(disday8/1000)-1]
-        if disday9 > 0:
-            rate += OneRate[(disday9/1000)-1]
-        rateVolume = (4/3)*3.14*rate**3
-        print('rate (volume/day) =',(4/3)*3.14*rate**3)
+        rateVolume = (4/3)*3.14*76**3
+        print('rate (volume/day) =',rateVolume)
     
     elif speed == 3:
-        rate = 0
-        if disday1 > 0:
-            rate += ThreeRate[(disday1/1000)-1]
-        if disday2 > 0:
-            rate += ThreeRate[(disday2/1000)-1]
-        if disday3 > 0:
-            rate += ThreeRate[(disday3/1000)-1]
-        if disday4 > 0:
-            rate += ThreeRate[(disday4/1000)-1]
-        if disday5 > 0:
-            rate += ThreeRate[(disday5/1000)-1]
-        if disday6 > 0:
-            rate += ThreeRate[(disday6/1000)-1]
-        if disday7 > 0:
-            rate += ThreeRate[(disday7/1000)-1]
-        if disday8 > 0:
-            rate += ThreeRate[(disday8/1000)-1]
-        if disday9 > 0:
-            rate += ThreeRate[(disday9/1000)-1]
-        rateVolume = (4/3)*3.14*rate**3
-        print('rate (volume/day) =',(4/3)*3.14*rate**3)
+        rateVolume = (4/3)*3.14*60**3
+        print('rate (volume/day) =',rateVolume)
         
     elif speed == 5:
-        rate = 0
-        if disday1 > 0:
-            rate += FiveRate[(disday1/1000)-1]
-        if disday2 > 0:
-            rate += FiveRate[(disday2/1000)-1]
-        if disday3 > 0:
-            rate += FiveRate[(disday3/1000)-1]
-        if disday4 > 0:
-            rate += FiveRate[(disday4/1000)-1]
-        if disday5 > 0:
-            rate += FiveRate[(disday5/1000)-1]
-        if disday6 > 0:
-            rate += FiveRate[(disday6/1000)-1]
-        if disday7 > 0:
-            rate += FiveRate[(disday7/1000)-1]
-        if disday8 > 0:
-            rate += FiveRate[(disday8/1000)-1]
-        if disday9 > 0:
-            rate += FiveRate[(disday9/1000)-1]
-        rateVolume = (4/3)*3.14*rate**3
+        rateVolume = (4/3)*3.14*25.28**3
         print('rate (volume/day) =',rateVolume)
     
     print('Cost of desalinating: $',(size-rateVolume*numOfDays)*0.85*0.13)
@@ -109,7 +52,7 @@ def cost(speed,size,maxLoad,numOfDays,disday1,disday2,disday3,disday4,disday5,di
         else:
             print('Cost of Towing = $',FiveFuel[math.log10(size)-5]*9600+dailyRental*numOfDays)'''
         
-cost(1,1000000,1000000,1,4000,0,0,0,0,0,0,0,0)
+cost(3,100000,500000,1,4000,0,0,0,0,0,0,0,0)
 
 '''def costTowing(speed,size,dailyRental,numOfDays):
 
