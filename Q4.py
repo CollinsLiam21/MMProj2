@@ -38,10 +38,12 @@ def cost(speed,size,maxLoad):
     numOfDays = (9600/speed)/24
     
     if speed == 1:
-        print('Cost of Towing = $',OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays)
+        costOfTowing = OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
+        print('Cost of Towing = $')
     
     elif speed == 3:
-        print('Cost of Towing = $',ThreeFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays)
+        costOfTowing = ThreeFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
+        print('Cost of Towing = $')
     
     elif speed == 5:
         costOfTowing = FiveFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
