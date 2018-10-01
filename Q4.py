@@ -3,10 +3,6 @@ import math
 
 def cost(speed,size,maxLoad):
 
-    OneRate = [0.06,0.12,0.18,0.24]
-    ThreeRate = [0.08,0.16,0.24,0.32]
-    FiveRate = [0.1,0.2,0.3,0.4]
-    
     if speed == 1:
         totalVolumeLoss = (4/3)*3.14*76**3
         print('rate (volume/day) =',totalVolumeLoss)
