@@ -130,7 +130,7 @@ for x2 in range(0,20):
     f = '(4/3)*3.1415*(0.00144*x-0.0000014)**3'
     eval(f.replace('x',str(x2)))
     #prints function and interval
-    print('Interval = [',0,',',x2,']')
+    
     
     #number of boxes, after 1000 boxes the program runs very slowly
     n = 100
@@ -150,10 +150,9 @@ for x2 in range(0,20):
     firstYValue = eval(f.replace('x',str(0)))
     lastYValue = eval(f.replace('x',str(x2)))
     
-    integral = (total+firstYValue+lastYValue)*(x2)/n*(1/3)
-    
     #prints arc length
-print('Integral:',integral)
+print('Interval = [',0,',',x2,']')
+print('Integral:',(total+firstYValue+lastYValue)*(x2)/n*(1/3))
 
     
         
