@@ -1,7 +1,7 @@
 
 import math
 
-'''def cost(speed,size,maxLoad):
+def cost(speed,size,maxLoad):
 
     radius1 = 76
     radius3 = 60
@@ -9,15 +9,15 @@ import math
 
     if speed == 1:
         totalVolumeLoss = (4/3)*3.14*76**3
-        print('rate (volume/day) =',totalVolumeLoss)
+        print('volume loss =',totalVolumeLoss)
     
     elif speed == 3:
         totalVolumeLoss = (4/3)*3.14*60**3
-        print('rate (volume/day) =',totalVolumeLoss)
+        print('volume loss =',totalVolumeLoss)
         
     elif speed == 5:
         totalVolumeLoss = (4/3)*3.14*25.28**3
-        print('rate (volume/day) =',totalVolumeLoss)
+        print('volume loss =',totalVolumeLoss)
     
     print('Original Volume =',size)
     print('Final Volume =',size-totalVolumeLoss)
@@ -52,7 +52,7 @@ import math
         print('Cost of Towing = $',costOfTowing)
         print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
-cost(1,10000000,10000000)'''
+cost(1,10000000,10000000)
 
 '''def cost(speed,size,maxLoad): 
     
@@ -103,7 +103,7 @@ cost(1,10000000,10000000)'''
         print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
 cost(1,10000000,10000000)'''
-
+print('')
 speed = 1
 
 dailyRental = [520,780,1400]
@@ -128,13 +128,13 @@ costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
 totVolumeLoss = 10000000 - volume - eval(r.replace('x',str(x2)))*(400-x2)
 print('total volume loss:',totVolumeLoss)
 print('final volume:',volume - eval(r.replace('x',str(x2)))*(400-x2))
-print('cost of desalinating:',volume*0.85*0.13)
+print('cost of desalinating:',(volume - eval(r.replace('x',str(x2)))*(400-x2))*0.85*0.13)
 print('final fuel:',fuel)
 print('cost of fuel: ',costOfFuel)
 
 costOfTowing = costOfFuel + dailyRental1*400
 print('Cost of Towing = $',costOfTowing)
-print('Profit =',volume*0.85*0.13 - costOfTowing)
+print('Profit =',(volume - eval(r.replace('x',str(x2)))*(400-x2))*0.85*0.13 - costOfTowing)
 
 '''volume = 1000
 for i in range(0,2):
