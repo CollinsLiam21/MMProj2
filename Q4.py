@@ -139,14 +139,14 @@ totVolumeLoss = volume
 
 print(eval(r.replace('x',str(x2)))*(400-x2))
 print('total volume loss:',totVolumeLoss)
-print('final volume:',volume - volumeLoss_After4000)
-print('cost of desalinating:',(volume + volumeLoss_After4000)*0.85*0.13)
+print('final volume:',volume)
+print('cost of desalinating:',(volume)*0.85*0.13)
 print('final fuel:',fuel)
 print('cost of fuel: ',costOfFuel)
 
 costOfTowing = costOfFuel + dailyRental1*400
 print('Cost of Towing = $',costOfTowing)
-print('Profit =',(volume + volumeLoss_After4000)*0.85*0.13 - costOfTowing)
+print('Profit =',(volume)*0.85*0.13 - costOfTowing)
 
 '''volume = 1000
 for i in range(0,2):
