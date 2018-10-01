@@ -125,6 +125,7 @@ for x2 in range(0,168):
     costOfFuel_Before4000 += fuel*24
 
 volume1 = 0
+costOfFuel_After4000 = 0
 for x2 in range(168,400):
     r = '0.00144*x-0.0000014'
     #prints function and interval
