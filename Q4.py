@@ -125,7 +125,8 @@ import math
 
 cost(5,10000000,10000000)'''
 
-x2 = 0
+
+for x2 in range(0,167)
     f = '0.00144*x-0.0000014'
     eval(f.replace('x',str(x2)))
     #prints function and interval
@@ -142,15 +143,15 @@ x2 = 0
     total = 0
     for i in range(1,n):
         if num%2 == 0:
-            total += 4*eval(f.replace('x',str(((x2-0)/n)*i)))
+            total += 4*eval(f.replace('x',str(((x2)/n)*i)))
             num += 1
         else:
-            total += 2*eval(f.replace('x',str(((x2-0)/n)*i)))
+            total += 2*eval(f.replace('x',str(((x2)/n)*i)))
             num += 1
     
     #first value yo and last value yn
-    firstYValue = sqrt(1+(a*b*(x1)**(b-1)+c*d*(x1)**(d-1))**2)
-    lastYValue = sqrt(1+(a*b*(x2)**(b-1)+c*d*(x2)**(d-1))**2)
+    firstYValue = eval(f.replace('x',str(0)))
+    lastYValue = eval(f.replace('x',str(x2)))
     
     #prints arc length
     print('Arc Length:',(total+firstYValue+lastYValue)*(x2-x1)/n*(1/3))
