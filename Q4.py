@@ -104,10 +104,12 @@ def cost(speed,size,maxLoad):
         print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
 cost(1,10000000,10000000)
-    
 
 
+'''volume = 100  
+f = '2.75*math.log10(x)-2.83'
 
+print(eval(f.replace('x',str(volume))))'''
 
 
 
