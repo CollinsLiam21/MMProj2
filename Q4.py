@@ -69,7 +69,7 @@ def cost(speed,size,maxLoad):
     
     if speed == 1:
         radius = 0
-        volume = 10000000
+        volume = maxLoad
         costOfFuel = 0
         for x2 in range(0,168):
             r = '0.00144*x-0.0000014'
