@@ -103,7 +103,6 @@ cost(1,10000000,10000000)'''
         print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
 cost(1,10000000,10000000)'''
-print('')
 
 maxLoad = 10000000
 speed = 3
@@ -154,18 +153,18 @@ if speed == 1:
     print('Profit =',(volume)*0.85*0.13 - costOfTowing)
 
 if speed == 3:
-    radius1 = 133.65046
-    volume = maxLoad
-    costOfFuel_Before4000 = 0
-    for x2 in range(1,56):
-        r = '0.00576*x+0.0000576'
-        #prints function and interval
-        radius = eval(r.replace('x',str(x2)))
-        radius1 -= radius
-        volume = (4/3)*3.1415*(radius1)**3
-        f = '3.5*math.log10(x)-3.467'
-        fuel = eval(f.replace('x',str(volume)))
-        costOfFuel_Before4000 += fuel*24
+    radius1 = 133.65046     #starting radius of spherical iceberg (found using volume of starting size)
+    volume = maxLoad    #starting volume is the assumption that the starting size of the iceberg is the max load
+    costOfFuel_Before4000 = 0   
+    for x2 in range(1,56):      #for loop that calculates volume at the end of 4000km and total cost of fuel up to 4000km
+        r = '0.00576*x+0.0000576'   #linear regression of rate iceberg shrinks up to 4000km - found in desmos
+        radius = eval(r.replace('x',str(x2)))   #plugs day into linear regression to find rate of decrease at that specific days
+        radius1 -= radius   #updates radius value by subtracting radius on day x2 from previous day
+        volume = (4/3)*3.1415*(radius1)**3      #calculates volume of iceberg at day x2
+        f = '3.5*math.log10(x)-3.467'   #linear regression of fuel cost (made linear by taking log of size) - found in demos
+        fuel = eval(f.replace('x',str(volume)))     #finds cost of fuel at day x2
+        costOfFuel_Before4000 += fuel*72    #updates total cost of fuel by adding the fuel for each day and..
+                                                #multiplying by 24 because boat travels 72km/day at 3km/hr
     
     
     costOfFuel_After4000 = 0
