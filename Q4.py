@@ -154,7 +154,7 @@ for x2 in range(0,167)
     lastYValue = eval(f.replace('x',str(x2)))
     
     #prints arc length
-    print('Arc Length:',(total+firstYValue+lastYValue)*(x2-x1)/n*(1/3))
+    print('Arc Length:',(total+firstYValue+lastYValue)*(x2)/n*(1/3))
 
     
         
