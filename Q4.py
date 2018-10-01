@@ -133,9 +133,9 @@ for x2 in range(168,400):
     fuel = eval(f.replace('x',str(volume)))
     costOfFuel_After4000 += fuel*24
 
-volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
+#volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
 costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
-totVolumeLoss = 10000000 - (volume + volumeLoss_After4000)
+totVolumeLoss = volume
 
 print(eval(r.replace('x',str(x2)))*(400-x2))
 print('total volume loss:',totVolumeLoss)
