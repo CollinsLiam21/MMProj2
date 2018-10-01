@@ -119,6 +119,7 @@ for x2 in range(0,168):
     #prints function and interval
     radius = eval(r.replace('x',str(x2)))
     volume -= (4/3)*3.1415*(radius)**3
+    print(volume)
     f = '2.75*math.log10(volume)-2.83'
     fuel = eval(f.replace('x',str(volume)))
     costOfFuel_Before4000 += fuel*24
@@ -137,7 +138,7 @@ print('cost of fuel: ',costOfFuel)
 
 costOfTowing = costOfFuel + dailyRental1*400
 print('Cost of Towing = $',costOfTowing)
-print('Profit =',(volumeLoss_Before4000 + volumeLoss_After4000)*0.85*0.13 - costOfTowing)
+print('Profit =',(volume + volumeLoss_After4000)*0.85*0.13 - costOfTowing)
 
 '''volume = 1000
 for i in range(0,2):
