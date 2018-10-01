@@ -172,7 +172,7 @@ if speed == 3:
     for i in range(56,numOfDays):
         r = '0.00576*x+0.0000576'
         #prints function and interval
-        radius = 0.24
+        radius = 0.32
         radius1 -= radius
         volume = (4/3)*3.1415*(radius1)**3
         f = '3.5*math.log10(x)-3.467'
