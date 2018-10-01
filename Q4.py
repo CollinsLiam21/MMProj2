@@ -114,24 +114,25 @@ numOfDays = (9600/speed)/24
 radius = 0
 volume = 10000000
 costOfFuel_Before4000 = 0
-for x2 in range(0,168):
+for x2 in range(0,2):
     r = '0.00144*x-0.0000014'
     #prints function and interval
     radius = eval(r.replace('x',str(x2)))
+    print(radius)
     volume -= (4/3)*3.1415*(radius)**3
     print(volume)
     f = '2.75*math.log10(volume)-2.83'
     fuel = eval(f.replace('x',str(volume)))
     costOfFuel_Before4000 += fuel*24
 
-costOfFuel_After4000 = 0
-for x2 in range(168,400):
+'''costOfFuel_After4000 = 0
+for i in range(168,400):
     r = '0.00144*x-0.0000014'
     #prints function and interval
     volume -= (4/3)*3.1415*(0.24)**3
     f = '2.75*math.log10(volume)-2.83'
-    fuel = eval(f.replace('x',str(volume)))
-    costOfFuel_After4000 += fuel*24
+    fuel1 = eval(f.replace('x',str(volume)))
+    costOfFuel_After4000 += fuel1*24'''
 
 #volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
 costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
@@ -141,7 +142,7 @@ print(eval(r.replace('x',str(x2)))*(400-x2))
 print('total volume loss:',totVolumeLoss)
 print('final volume:',volume)
 print('cost of desalinating:',(volume)*0.85*0.13)
-print('final fuel:',fuel)
+print('final fuel:',fuel1)
 print('cost of fuel: ',costOfFuel)
 
 costOfTowing = costOfFuel + dailyRental1*400
