@@ -55,22 +55,58 @@ import math
 
 cost(5,10000000,10000000)'''
 
-radius = 0
-volume = 10000000
-costOfFuel = 0
-for x2 in range(0,168):
-    r = '0.00144*x-0.0000014'
-    #prints function and interval
-    radius += eval(r.replace('x',str(x2)))
-    volume -= (4/3)*3.1415*(radius)**3
-    f = '2.75*math.log10(x)-2.83'
-    fuel = eval(f.replace('x',str(volume)))
-    costOfFuel += fuel*24
+def cost(speed,size,maxLoad): 
+    
+    dailyRental = [520,780,1400]
+    dailyRental1 = dailyRental[(math.log10(maxLoad)//1)-5]
+    
+    if maxLoad/size >= 1:
+        numOfLoads = maxLoad/size
+    else:
+        print('Not feasible')
+    
+    numOfDays = (9600/speed)/24
+    
+    if speed == 1:
+        radius = 0
+        volume = 10000000
+        costOfFuel = 0
+        for x2 in range(0,168):
+            r = '0.00144*x-0.0000014'
+            #prints function and interval
+            radius += eval(r.replace('x',str(x2)))
+            volume -= (4/3)*3.1415*(radius)**3
+            f = '2.75*math.log10(x)-2.83'
+            fuel = eval(f.replace('x',str(volume)))
+            costOfFuel_Before4000 += fuel*24
+
+        costOfFuel_After4000 = fuel*(numOfDays-x2)
+        costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
+        totVolumeLoss = maxLoad - volume
+        print('total volume loss:',totVolumeLoss)
+        print('final volume:',volume)
+        print('cost of desalinating:',volume*0.85*0.13)
+        print('final fuel:',fuel)
+        print('cost of fuel: ',costOfFuel)
+        
+        costOfTowing = costOfFuel + dailyRental1*numOfDays
+        print('Cost of Towing = $',costOfTowing)
+        print('Profit =',volume*0.85*0.13 - costOfTowing)
+    
+    elif speed == 3:
+        costOfTowing = ThreeFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
+        print('Cost of Towing = $',costOfTowing)
+        print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
+    
+    elif speed == 5:
+        costOfTowing = FiveFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
+        print('Cost of Towing = $',costOfTowing)
+        print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
+
+cost(1,10000000,10000000)
     
 
-print('total decrease in radius:',radius)
-print('final fuel:',fuel)
-print('cost of fuel: ',costOfFuel+fuel*(400-x2))
+
 
 
 
