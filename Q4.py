@@ -126,13 +126,14 @@ import math
 cost(5,10000000,10000000)'''
 
 
-x2 = 20
-f = '(4/3)*3.1415*(0.00144*x-0.0000014)**3'
-eval(f.replace('x',str(x2)))
-#prints function and interval
+for x2 in range(0,167):
+    f = '0.00144*x-0.0000014'
+    #prints function and interval
+    print(eval(f.replace('x',str(x2))))
 
 
-#number of boxes, after 1000 boxes the program runs very slowly
+
+'''#number of boxes, after 1000 boxes the program runs very slowly
 n = 100
 
 #a loop multiplying every other y value by 4 and the other y values by 2 (Simpson's Rule)
@@ -149,10 +150,12 @@ for i in range(1,n):
 #first value yo and last value yn
 firstYValue = eval(f.replace('x',str(0)))
 lastYValue = eval(f.replace('x',str(x2)))
+integral = (total+firstYValue+lastYValue)*(x2)/n*(1/3)
+box = (400-x2)*eval(f.replace('x',str(x2)))
 
 #prints arc length
 print('Interval = [',0,',',x2,']')
-print('Integral:',(total+firstYValue+lastYValue)*(x2)/n*(1/3))
+print('Integral:',integral)'''
 
     
         
