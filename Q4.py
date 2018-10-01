@@ -125,11 +125,13 @@ import math
 
 cost(5,10000000,10000000)'''
 
-
+a = 0
 for x2 in range(0,167):
     f = '0.00144*x-0.0000014'
     #prints function and interval
-    print(eval(f.replace('x',str(x2))))
+    a += eval(f.replace('x',str(x2)))
+    
+print(a)
 
 
 
