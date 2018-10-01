@@ -76,7 +76,7 @@ def cost(speed,size,maxLoad):
             #prints function and interval
             radius += eval(r.replace('x',str(x2)))
             volume -= (4/3)*3.1415*(radius)**3
-            f = '2.75*math.log10(x)-2.83'
+            f = '2.75*math.log10(volume)-2.83'
             fuel = eval(f.replace('x',str(volume)))
             costOfFuel_Before4000 += fuel*24
 
@@ -106,10 +106,10 @@ def cost(speed,size,maxLoad):
 cost(1,10000000,10000000)
 
 
-'''volume = 100  
-f = '2.75*math.log10(x)-2.83'
-
-print(eval(f.replace('x',str(volume))))'''
+'''volume = 1000
+for i in range(0,2):
+    f = 'math.log10(x)'
+    print(eval(f.replace('x',str(volume))))'''
 
 
 
