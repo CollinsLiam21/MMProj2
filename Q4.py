@@ -131,7 +131,7 @@ for x2 in range(168,400):
     #prints function and interval
     volume1 += (4/3)*3.1415*(0.24)**3
     f = '2.75*math.log10(volume)-2.83'
-    fuel = eval(f.replace('x',str(volume1)))
+    fuel1 = eval(f.replace('x',str(volume1)))
     costOfFuel_After4000 += fuel*24
 
 volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
