@@ -176,7 +176,7 @@ if speed == 3:
         volume = (4/3)*3.1415*(radius1)**3
         f = '3.5*math.log10(x)-3.467'
         fuel = eval(f.replace('x',str(volume)))
-        costOfFuel_After4000 += fuel*24
+        costOfFuel_After4000 += fuel*72
     
     #volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
     costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
