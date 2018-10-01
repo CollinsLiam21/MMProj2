@@ -178,18 +178,17 @@ if speed == 3:
         fuel = eval(f.replace('x',str(volume)))
         costOfFuel_After4000 += fuel*72
     
-    #volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
     costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
     totVolumeLoss = maxLoad - volume
-    
-    print('total volume loss:',totVolumeLoss)
-    print('final volume:',volume)
-    print('cost of desalinating:',(volume)*0.85*0.13)
-    print('final fuel:',fuel)
-    print('cost of fuel: ',costOfFuel)
-    
+    costOfDesalinating = (volume)*0.85*0.13
     costOfTowing = costOfFuel + dailyRental1*numOfDays
+    
+    print('total volume loss:',totVolumeLoss,'m^3')
+    print('final volume:',volume,'m^3')
+    print('final fuel:',fuel,'$/km')
+    print('cost of fuel: $',costOfFuel)
     print('Cost of Towing = $',costOfTowing)
-    print('Profit =',(volume)*0.85*0.13 - costOfTowing)
+    print('cost of desalinating: $',costOfDesalinating)
+    print('Profit =',costOfDesalinating - costOfTowing)
 
     
