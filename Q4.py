@@ -120,9 +120,8 @@ for x2 in range(1,168):
     #prints function and interval
     radius = eval(r.replace('x',str(x2)))
     radius1 -= radius
-    volume -= (4/3)*3.1415*(radius1)**3
+    volume = (4/3)*3.1415*(radius1)**3
     print(radius)
-    volume -= (4/3)*3.1415*(radius)**3
     print(volume)
     f = '2.75*math.log10(x)-2.83'
     fuel = eval(f.replace('x',str(volume)))
