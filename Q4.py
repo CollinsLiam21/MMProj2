@@ -121,7 +121,7 @@ for x2 in range(0,168):
     volume -= (4/3)*3.1415*(radius)**3
     f = '2.75*math.log10(volume)-2.83'
     fuel = eval(f.replace('x',str(volume)))
-    costOfFuel_Before4000 -= fuel*24
+    costOfFuel_Before4000 += fuel*24
     
 costOfFuel_After4000 = fuel*(400-x2)*24
 costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
