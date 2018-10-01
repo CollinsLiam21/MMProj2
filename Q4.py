@@ -119,10 +119,9 @@ for x2 in range(0,168):
     #prints function and interval
     radius = eval(r.replace('x',str(x2)))
     volume -= (4/3)*3.1415*(radius)**3
-    print(volume)
     f = '2.75*math.log10(volume)-2.83'
     fuel = eval(f.replace('x',str(volume)))
-    costOfFuel_Before4000 += fuel*24
+    costOfFuel_Before4000 -= fuel*24
     
 costOfFuel_After4000 = fuel*(400-x2)*24
 costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
@@ -130,7 +129,7 @@ totVolumeLoss = 10000000 - volume + (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(
 print(eval(r.replace('x',str(x2)))*(400-x2))
 print('total volume loss:',totVolumeLoss)
 print('final volume:',volume - (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3)
-print('cost of desalinating:',(volume - eval(r.replace('x',str(x2)))*(400-x2))*0.85*0.13)
+print('cost of desalinating:',(volume - (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3)*0.85*0.13)
 print('final fuel:',fuel)
 print('cost of fuel: ',costOfFuel)
 
