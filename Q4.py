@@ -126,12 +126,12 @@ import math
 cost(5,10000000,10000000)'''
 
 radius = 0
-volume = 0
+volume = 10000000
 for x2 in range(0,167):
     f = '0.00144*x-0.0000014'
     #prints function and interval
     radius += eval(f.replace('x',str(x2)))
-    volume += (4/3)*3.1415*(radius)**3
+    volume -= (4/3)*3.1415*(radius)**3
     
 print(radius)
 print(volume)
