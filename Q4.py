@@ -58,7 +58,7 @@ cost(5,10000000,10000000)'''
 radius = 0
 volume = 10000000
 costOfFuel = 0
-for x2 in range(0,167):
+for x2 in range(0,168):
     r = '0.00144*x-0.0000014'
     #prints function and interval
     radius += eval(r.replace('x',str(x2)))
@@ -70,7 +70,7 @@ for x2 in range(0,167):
 
 print('total decrease in radius:',radius)
 print('final fuel:',fuel)
-print('cost of fuel: ',costOfFuel)
+print('cost of fuel: ',costOfFuel+fuel*(400-x2))
 
 
 
