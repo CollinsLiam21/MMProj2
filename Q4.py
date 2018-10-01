@@ -126,14 +126,11 @@ import math
 cost(5,10000000,10000000)'''
 
 
-for x2 in range(0,167)
+for x2 in range(0,2)
     f = '0.00144*x-0.0000014'
     eval(f.replace('x',str(x2)))
     #prints function and interval
     print('Interval = [',0,',',x2,']')
-    
-    #Finding derivative
-    print("f'(x) = ",a*b,'x^',b-1,' + ',c*d,'x^',d-1)
     
     #number of boxes, after 1000 boxes the program runs very slowly
     n = 100
@@ -154,7 +151,7 @@ for x2 in range(0,167)
     lastYValue = eval(f.replace('x',str(x2)))
     
     #prints arc length
-    print('Arc Length:',(total+firstYValue+lastYValue)*(x2)/n*(1/3))
+    print('Integral:',(total+firstYValue+lastYValue)*(x2)/n*(1/3))
 
     
         
