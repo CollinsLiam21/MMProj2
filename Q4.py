@@ -106,7 +106,7 @@ cost(1,10000000,10000000)'''
 print('')
 
 maxLoad = 10000000
-speed = 1
+speed = 3
 
 dailyRental = [520,780,1400]
 dailyRental1 = dailyRental[(math.log10(maxLoad)//1)-5]
@@ -136,6 +136,46 @@ if speed == 1:
         radius1 -= radius
         volume = (4/3)*3.1415*(radius1)**3
         f = '2.75*math.log10(x)-2.83'
+        fuel = eval(f.replace('x',str(volume)))
+        costOfFuel_After4000 += fuel*24
+    
+    #volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
+    costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
+    totVolumeLoss = maxLoad - volume
+    
+    print('total volume loss:',totVolumeLoss)
+    print('final volume:',volume)
+    print('cost of desalinating:',(volume)*0.85*0.13)
+    print('final fuel:',fuel)
+    print('cost of fuel: ',costOfFuel)
+    
+    costOfTowing = costOfFuel + dailyRental1*numOfDays
+    print('Cost of Towing = $',costOfTowing)
+    print('Profit =',(volume)*0.85*0.13 - costOfTowing)
+
+if speed == 3:
+    radius1 = 133.65046
+    volume = maxLoad
+    costOfFuel_Before4000 = 0
+    for x2 in range(1,56):
+        r = '0.00576*x+0.0000576'
+        #prints function and interval
+        radius = eval(r.replace('x',str(x2)))
+        radius1 -= radius
+        volume = (4/3)*3.1415*(radius1)**3
+        f = '3.5*math.log10(x)-3.467'
+        fuel = eval(f.replace('x',str(volume)))
+        costOfFuel_Before4000 += fuel*24
+    
+    
+    costOfFuel_After4000 = 0
+    for i in range(56,numOfDays):
+        r = '0.00576*x+0.0000576'
+        #prints function and interval
+        radius = 0.24
+        radius1 -= radius
+        volume = (4/3)*3.1415*(radius1)**3
+        f = '3.5*math.log10(x)-3.467'
         fuel = eval(f.replace('x',str(volume)))
         costOfFuel_After4000 += fuel*24
     
