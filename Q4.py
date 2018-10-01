@@ -127,13 +127,14 @@ cost(5,10000000,10000000)'''
 
 radius = 0
 volume = 10000000
+fuel = 0
 for x2 in range(0,167):
     r = '0.00144*x-0.0000014'
     #prints function and interval
     radius += eval(r.replace('x',str(x2)))
     volume -= (4/3)*3.1415*(radius)**3
     f = '2.75*math.log10(x)-2.83'
-    fuel = eval(f.replace('x',str(volume)))
+    fuel += eval(f.replace('x',str(volume)))
     
 print(radius)
 print(fuel)
