@@ -124,6 +124,15 @@ for x2 in range(0,168):
     fuel = eval(f.replace('x',str(volume)))
     costOfFuel_Before4000 += fuel*24
 
+volume1 = 0
+for x2 in range(168,400):
+    r = '0.00144*x-0.0000014'
+    #prints function and interval
+    volume1 += (4/3)*3.1415*(0.24)**3
+    f = '2.75*math.log10(volume)-2.83'
+    fuel = eval(f.replace('x',str(volume)))
+    costOfFuel_Before4000 += fuel*24
+
 volumeLoss_After4000 = (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
 costOfFuel_After4000 = fuel*(400-x2)*24
 costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
@@ -131,7 +140,7 @@ totVolumeLoss = 10000000 - (volume + volumeLoss_After4000)
 
 print(eval(r.replace('x',str(x2)))*(400-x2))
 print('total volume loss:',totVolumeLoss)
-print('final volume:',volume + volumeLoss_After4000)
+print('final volume:',volume - volumeLoss_After4000)
 print('cost of desalinating:',(volume + volumeLoss_After4000)*0.85*0.13)
 print('final fuel:',fuel)
 print('cost of fuel: ',costOfFuel)
