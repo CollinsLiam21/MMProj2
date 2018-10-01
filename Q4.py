@@ -6,39 +6,6 @@ import math
     radius1 = 76
     radius3 = 60
     radius5 = 25.58
-        
-    x2 = 0
-    f = '0.00144*x-0.0000014'
-    eval(f.replace('x',str(x2)))
-    #prints function and interval
-    print('Interval = [',0,',',x2,']')
-    
-    #Finding derivative
-    print("f'(x) = ",a*b,'x^',b-1,' + ',c*d,'x^',d-1)
-    
-    #number of boxes, after 1000 boxes the program runs very slowly
-    n = 100
-    
-    #a loop multiplying every other y value by 4 and the other y values by 2 (Simpson's Rule)
-    num = 1
-    total = 0
-    for i in range(1,n):
-        if num%2 == 0:
-            total += 4*eval(f.replace('x',str(((x2-0)/n)*i)))
-            num += 1
-        else:
-            total += 2*eval(f.replace('x',str(((x2-0)/n)*i)))
-            num += 1
-    
-    #first value yo and last value yn
-    firstYValue = sqrt(1+(a*b*(x1)**(b-1)+c*d*(x1)**(d-1))**2)
-    lastYValue = sqrt(1+(a*b*(x2)**(b-1)+c*d*(x2)**(d-1))**2)
-    
-    #prints arc length
-    print('Arc Length:',(total+firstYValue+lastYValue)*(x2-x1)/n*(1/3))
-
-#user input values for the function
-#function(a,b,c,d,e,x1,x2)
 
 
     if speed == 1:
@@ -71,43 +38,6 @@ import math
     
     numOfDays = (9600/speed)/24
     
-    from math import sqrt
-
-    #defined function
-    def arcLength(x1,x2):
-        
-        f = 2.75*math.log10(totalVolume)
-        #prints function and interval
-        print('Interval = [',x1,',',x2,']')
-        
-        #Finding derivative
-        print("f'(x) = ",a*b,'x^',b-1,' + ',c*d,'x^',d-1)
-        
-        #number of boxes, after 1000 boxes the program runs very slowly
-        n = 100
-        
-        #a loop multiplying every other y value by 4 and the other y values by 2 (Simpson's Rule)
-        num = 1
-        total = 0
-        for i in range(1,n):
-            if num%2 == 0:
-                total += 4*sqrt(1+(a*b*(((x2-x1)/n)*i+x1)**(b-1)+c*d*(((x2-x1)/n)*i+x1)**(d-1))**2)
-                num += 1
-            else:
-                total += 2*sqrt(1+(a*b*(((x2-x1)/n)*i+x1)**(b-1)+c*d*(((x2-x1)/n)*i+x1)**(d-1))**2)
-                num += 1
-        
-        #first value yo and last value yn
-        firstYValue = sqrt(1+(a*b*(x1)**(b-1)+c*d*(x1)**(d-1))**2)
-        lastYValue = sqrt(1+(a*b*(x2)**(b-1)+c*d*(x2)**(d-1))**2)
-        
-        #prints arc length
-        print('Arc Length:',(total+firstYValue+lastYValue)*(x2-x1)/n*(1/3))
-    
-    #user input values for the function
-    #function(a,b,c,d,e,x1,x2)
-    arcLength(1/3,3,1/4,-1,0,1,3)
-    
     if speed == 1:
         costOfTowing = OneFuel[math.log10(size)-5]*numOfLoads*9600+dailyRental1*numOfDays
         print('Cost of Towing = $',costOfTowing)
@@ -138,9 +68,9 @@ for x2 in range(0,167):
     costOfFuel += fuel*24
     
 
-print(radius)
-print(fuel)
-print(costOfFuel)
+print('total decrease in radius:',radius)
+print('final fuel:',fuel)
+print('cost of fuel: ',costOfFuel)
 
 
 
