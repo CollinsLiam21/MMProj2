@@ -7,7 +7,6 @@ import math
     radius3 = 60
     radius5 = 25.58
 
-
     if speed == 1:
         totalVolumeLoss = (4/3)*3.14*76**3
         print('rate (volume/day) =',totalVolumeLoss)
@@ -53,9 +52,9 @@ import math
         print('Cost of Towing = $',costOfTowing)
         print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
-cost(5,10000000,10000000)'''
+cost(1,10000000,10000000)'''
 
-def cost(speed,size,maxLoad): 
+'''def cost(speed,size,maxLoad): 
     
     dailyRental = [520,780,1400]
     dailyRental1 = dailyRental[(math.log10(maxLoad)//1)-5]
@@ -70,7 +69,7 @@ def cost(speed,size,maxLoad):
     if speed == 1:
         radius = 0
         volume = maxLoad
-        costOfFuel = 0
+        costOfFuel_Before4000 = 0
         for x2 in range(0,168):
             r = '0.00144*x-0.0000014'
             #prints function and interval
@@ -103,8 +102,39 @@ def cost(speed,size,maxLoad):
         print('Cost of Towing = $',costOfTowing)
         print('Profit =',(size-totalVolumeLoss)*0.85*0.13 - costOfTowing)
 
-cost(1,10000000,10000000)
+cost(1,10000000,10000000)'''
 
+speed = 1
+
+dailyRental = [520,780,1400]
+dailyRental1 = dailyRental[(math.log10(10000000)//1)-5]
+
+numOfDays = (9600/speed)/24
+
+radius = 0
+volume = 10000000
+costOfFuel_Before4000 = 0
+for x2 in range(0,168):
+    r = '0.00144*x-0.0000014'
+    #prints function and interval
+    radius += eval(r.replace('x',str(x2)))
+    volume -= (4/3)*3.1415*(radius)**3
+    f = '2.75*math.log10(volume)-2.83'
+    fuel = eval(f.replace('x',str(volume)))
+    costOfFuel_Before4000 += fuel*24
+    
+costOfFuel_After4000 = fuel*(400-x2)*24
+costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
+totVolumeLoss = 10000000 - volume - eval(r.replace('x',str(x2)))
+print('total volume loss:',totVolumeLoss)
+print('final volume:',volume)
+print('cost of desalinating:',volume*0.85*0.13)
+print('final fuel:',fuel)
+print('cost of fuel: ',costOfFuel)
+
+costOfTowing = costOfFuel + dailyRental1*400
+print('Cost of Towing = $',costOfTowing)
+print('Profit =',volume*0.85*0.13 - costOfTowing)
 
 '''volume = 1000
 for i in range(0,2):
