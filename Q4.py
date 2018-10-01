@@ -129,7 +129,7 @@ costOfFuel = costOfFuel_Before4000 + costOfFuel_After4000
 totVolumeLoss = 10000000 - volume + (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3
 print(eval(r.replace('x',str(x2)))*(400-x2))
 print('total volume loss:',totVolumeLoss)
-print('final volume:',volume - eval(r.replace('x',str(x2)))*(400-x2))
+print('final volume:',volume - (4/3)*3.1415*(eval(r.replace('x',str(x2)))*(400-x2))**3)
 print('cost of desalinating:',(volume - eval(r.replace('x',str(x2)))*(400-x2))*0.85*0.13)
 print('final fuel:',fuel)
 print('cost of fuel: ',costOfFuel)
