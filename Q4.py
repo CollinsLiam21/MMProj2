@@ -119,7 +119,7 @@ for x2 in range(0,168):
     #prints function and interval
     radius = eval(r.replace('x',str(x2)))
     volumeLoss_Before4000 -= (4/3)*3.1415*(radius)**3
-    f = '2.75*math.log10(volume)-2.83'
+    f = '2.75*math.log10(volumeLoss_Before4000)-2.83'
     fuel = eval(f.replace('x',str(volumeLoss_Before4000)))
     costOfFuel_Before4000 += fuel*24
 
