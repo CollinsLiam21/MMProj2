@@ -1,7 +1,7 @@
 import math
 
 maxLoad = int(input('Enter the maximum load (assuming the starting size is also the max load): '))
-speed = int(input('Enter speed (1,3 or 5): '))
+speed = int(input('Enter speed (1,3, or 5): '))
 
 dailyRental = [520,780,1400]
 dailyRental1 = dailyRental[(math.log10(maxLoad)//1)-5]
