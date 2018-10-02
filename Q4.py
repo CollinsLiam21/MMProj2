@@ -1,13 +1,12 @@
 import math
 
 maxLoad = 10000000
-speed = 1
+speed = 5
 
 dailyRental = [520,780,1400]
 dailyRental1 = dailyRental[(math.log10(maxLoad)//1)-5]
 
 numOfDays = round((9600/speed)/24)
-print(numOfDays)
 
 if speed == 1:
     radius1 = (maxLoad*(3/4)/3.1415)**(1/3)     #starting radius of spherical iceberg (found using volume of starting size)
@@ -49,7 +48,7 @@ if speed == 1:
     print('Profit = $',costOfDesalinating - costOfTowing)
 
 elif speed == 3:
-    radius1 = 133.65046     #starting radius of spherical iceberg (found using volume of starting size)
+    radius1 = (maxLoad*(3/4)/3.1415)**(1/3)     #starting radius of spherical iceberg (found using volume of starting size)
     volume = maxLoad    #starting volume is the assumption that the starting size of the iceberg is the max load
     costOfFuel_Before4000 = 0   
     for x2 in range(1,56):      #for loop that calculates volume at the end of 4000km and total cost of fuel up to 4000km
@@ -87,7 +86,7 @@ elif speed == 3:
     print('Profit = $',costOfDesalinating - costOfTowing)
     
 elif speed == 5:
-    radius1 = 133.65046     #starting radius of spherical iceberg (found using volume of starting size)
+    radius1 = (maxLoad*(3/4)/3.1415)**(1/3)     #starting radius of spherical iceberg (found using volume of starting size)
     volume = maxLoad    #starting volume is the assumption that the starting size of the iceberg is the max load
     costOfFuel_Before4000 = 0   
     for x2 in range(1,34):      #for loop that calculates volume at the end of 4000km and total cost of fuel up to 4000km
