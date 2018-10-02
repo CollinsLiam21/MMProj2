@@ -1,3 +1,6 @@
+#MM Proj2 Problem 4
+#Liam Collins and Bauti Gallino
+
 import math
 
 maxLoad = int(input('Enter the maximum load (assuming the starting size is also the max load): '))
